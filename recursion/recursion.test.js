@@ -1,15 +1,15 @@
 /* Write a function to do the division operation without using the built-in division*/
 
 function division(number, dividedBy){
-   let count =0
-    if(dividedBy==number){
-        return 1
-    }else {
-        count++
-        return count+division(number-dividedBy,dividedBy)
-    }
- 
-}
+    if (number == 0 || dividedBy == 0) {
+        return 0;
+       } else if (dividedBy == 1) {
+         return number;
+       } else {
+         return number / dividedBy;
+       }
+     }
+     
 
 /* Write a function that implement Math.pow(x,n) but using recursion
 Example:
@@ -17,16 +17,17 @@ pow(2,4) = 16
 */
 
 
-function pow(x,n){
-    if(n==1 ){
-        return x}
-        else if(n==0){
-            return 1;
+
+    function pow(x, n) {
+        if (n == 0) {
+          return 1;
+        } else if (n == 1) {
+          return x;
+        } else {
+          return x * pow(x, n - 1);
         }
-        
-    else{
-     return x * pow(x, n- 1);}
-    }
+      }
+      
    
 /* The Fibonacci Series is a numeric series starting with the integers 0 and 1. In this series,
 the next integer is determined by summing the previous two. This gives us:
